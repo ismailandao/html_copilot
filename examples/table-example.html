@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Course Enrollment</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Alice Johnson</td>
+                <td>HTML Fundamentals</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Bob Smith</td>
+                <td>CSS Styling</td>
+                <td>B+</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Charlie Brown</td>
+                <td>JavaScript Basics</td>
+                <td>A-</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Diana Prince</td>
+                <td>Responsive Design</td>
+                <td>A+</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Exercise</h2>
+    <p>Try adding more rows to this table with different students and courses!</p>
+    
+    <a href="../index.html">← Back to Main Page</a>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .success {
+            background: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Course Registration Form</h1>
+        
+        <div id="successMessage" class="success">
+            Registration successful! Check the console for details.
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required minlength="3">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890">
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Date of Birth *</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Experience Level *</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="level" value="beginner" required> Beginner
+                    </label>
+                    <label>
+                        <input type="radio" name="level" value="intermediate"> Intermediate
+                    </label>
+                    <label>
+                        <input type="radio" name="level" value="advanced"> Advanced
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course *</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Choose a course --</option>
+                    <option value="html">HTML Fundamentals</option>
+                    <option value="css">CSS Styling & Layout</option>
+                    <option value="javascript">JavaScript Programming</option>
+                    <option value="react">React.js Development</option>
+                    <option value="fullstack">Full Stack Web Development</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Interests (Select all that apply)</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="interests" value="frontend"> Frontend
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="backend"> Backend
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="mobile"> Mobile
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your learning goals..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the terms and conditions *
+                </label>
+            </div>
+
+            <button type="submit">Register Now</button>
+        </form>
+
+        <p style="margin-top: 20px; text-align: center;">
+            <a href="../index.html">← Back to Main Page</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            console.log('Form Data:', data);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('successMessage').style.display = 'none';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Training with GitHub Copilot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to HTML Training</h1>
+        <nav>
+            <ul>
+                <li><a href="#basics">HTML Basics</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#semantic">Semantic HTML</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="basics">
+            <h2>HTML Basics</h2>
+            <article>
+                <h3>Headings and Paragraphs</h3>
+                <p>This is a paragraph demonstrating basic HTML text content. HTML provides six levels of headings from h1 to h6.</p>
+                <h4>Subheading Level 4</h4>
+                <p>Paragraphs are the building blocks of web content. They help organize text into readable sections.</p>
+            </article>
+
+            <article>
+                <h3>Links and Images</h3>
+                <p>Learn how to create hyperlinks: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Documentation</a></p>
+                <p>Images are embedded using the img tag:</p>
+                <img src="https://via.placeholder.com/300x200" alt="Placeholder image for HTML training">
+            </article>
+
+            <article>
+                <h3>Lists</h3>
+                <h4>Unordered List:</h4>
+                <ul>
+                    <li>HTML - HyperText Markup Language</li>
+                    <li>CSS - Cascading Style Sheets</li>
+                    <li>JavaScript - Programming Language</li>
+                </ul>
+
+                <h4>Ordered List:</h4>
+                <ol>
+                    <li>Open your text editor</li>
+                    <li>Create a new HTML file</li>
+                    <li>Write your HTML code</li>
+                    <li>Save and open in browser</li>
+                </ol>
+            </article>
+        </section>
+
+        <section id="forms">
+            <h2>HTML Forms</h2>
+            <article>
+                <h3>Contact Form Example</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Select Course:</label>
+                        <select id="course" name="course">
+                            <option value="">-- Choose a course --</option>
+                            <option value="html">HTML Fundamentals</option>
+                            <option value="css">CSS Styling</option>
+                            <option value="javascript">JavaScript Basics</option>
+                            <option value="responsive">Responsive Design</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="yes">
+                            Subscribe to newsletter
+                        </label>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </article>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic HTML5 Elements</h2>
+            <article>
+                <h3>Understanding Semantic Tags</h3>
+                <p>Semantic HTML elements clearly describe their meaning to both the browser and the developer.</p>
+                
+                <aside>
+                    <h4>Key Semantic Elements:</h4>
+                    <ul>
+                        <li><strong>&lt;header&gt;</strong> - Introductory content</li>
+                        <li><strong>&lt;nav&gt;</strong> - Navigation links</li>
+                        <li><strong>&lt;main&gt;</strong> - Main content</li>
+                        <li><strong>&lt;article&gt;</strong> - Self-contained content</li>
+                        <li><strong>&lt;section&gt;</strong> - Thematic grouping</li>
+                        <li><strong>&lt;aside&gt;</strong> - Sidebar content</li>
+                        <li><strong>&lt;footer&gt;</strong> - Footer content</li>
+                    </ul>
+                </aside>
+            </article>
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimedia Elements</h2>
+            <article>
+                <h3>Embedding Media</h3>
+                <h4>Video Example:</h4>
+                <video width="320" height="240" controls>
+                    <source src="sample-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h4>Audio Example:</h4>
+                <audio controls>
+                    <source src="sample-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </article>
+        </section>
+
+        <section id="practice">
+            <h2>Practice Exercises</h2>
+            <article>
+                <h3>Try These Challenges:</h3>
+                <ol>
+                    <li>Create a table with 3 columns and 4 rows</li>
+                    <li>Build a navigation menu with dropdown items</li>
+                    <li>Design a registration form with validation</li>
+                    <li>Embed a YouTube video using an iframe</li>
+                    <li>Create a responsive image gallery</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HTML Training with GitHub Copilot | Created for Coursera Learning</p>
+        <p>Learn more at <a href="https://www.coursera.org" target="_blank">Coursera</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
